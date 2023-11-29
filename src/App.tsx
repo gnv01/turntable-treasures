@@ -1,4 +1,4 @@
-export function App() {
+function App() {
   return (
     <>
       <header>
@@ -88,3 +88,5 @@ export function App() {
     </>
   );
 }
+
+export default App;
