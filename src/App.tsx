@@ -1,35 +1,90 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header>
+        <nav>
+          <button>menu</button>
+          <button>cart</button>
+        </nav>
+        <h1>Turntable Treasures</h1>
+      </header>
+      <main>
+        <section>
+          <h2>Explore Our Products</h2>
+          <p>
+            Looking for the perfect musical accessory to add to your collection?
+            Or perhaps an LP to listen to while cooking that dinner with your
+            partner? Turntable Treasure offers a range of, accsesories and
+            albums for those who like a great musical selection.
+          </p>
+          <img src="" alt="Carousel Images" />
+        </section>
+        <section id="small-cards">
+          <div id="sm-card-1">
+            <img src="" alt="" />
+            <h3>What's Hot.</h3>
+            <p>A peek into our new arrivals to combat that FOMO.</p>
+          </div>
+          <div id="sm-card-2">
+            <img src="" alt="" />
+            <p>Product name</p>
+            <p>Product price</p>
+            <a href="">add to cart button</a>
+          </div>
+          <div id="sm-card-3">
+            <img src="" alt="" />
+            <p>Product name</p>
+            <p>Product price</p>
+            <a href="">add to cart button</a>
+          </div>
+          <div id="sm-card-4">
+            <img src="" alt="" />
+            <p>Product name</p>
+            <p>Product price</p>
+            <a href="">add to cart button</a>
+          </div>
+        </section>
+        <section>
+          <div id="big-card-1">
+            <img src="" alt="" />
+            <h4>A selection of out must-haves.</h4>
+            <p>
+              Products that were hand picked for people who love things that are
+              as beautiful as they are useful.
+            </p>
+          </div>
+          <div id="big-card-2">
+            <img src="" alt="" />
+            <p>Product name</p>
+            <p>Product price</p>
+            <a href="">add to cart button</a>
+          </div>
+          <div id="big-card-3">
+            <img src="" alt="" />
+            <p>Product name</p>
+            <p>Product price</p>
+            <a href="">add to cart button</a>
+          </div>
+        </section>
+      </main>
+      <section>
+        <h5>Find more treasures here.</h5>
+      </section>
+      <section>
+        <h6>Sign up to our newsletter</h6>
+        <p>Be the first to hear about our latest products</p>
+        <form>
+          <input type="text" placeholder="E-mail address" />
+          <button>Subscribe</button>
+        </form>
+      </section>
+      <footer>
+        <a href="">Contact us</a>
+        <a href="">FAQS</a>
+        <a href="">Privacy policy</a>
+        <a href="">Terms of service</a>
+        <img src="" alt="Turntable Treasures" />
+      </footer>
     </>
-  )
+  );
 }
-
-export default App
