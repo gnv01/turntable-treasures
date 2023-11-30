@@ -1,14 +1,13 @@
+import Edifier from "./assets/edifier.png";
+import Store from "./assets/store1.png";
+import ATLP from "./assets/at-lp.png";
+import TheCar from "./assets/thecar.png";
+import Tranq from "./assets/tranquility_760x.png";
+import TSL from "./assets/tsrtame.png";
+
 function App() {
   return (
     <>
-      <header id="landing-p">
-        <div id="hero">
-          <button>
-            <span>Menu</span>
-          </button>
-          <nav id="nav-home" className="navbar"></nav>
-        </div>
-      </header>
       <main className="hero">
         <div className="explore-products">
           <h1>Explore our products.</h1>
@@ -20,156 +19,133 @@ function App() {
           </p>
         </div>
         <div className="carousel-container">
-          <a href="" className="carousel-redirect">
+          <a href="·" className="carousel-redirect">
             <div className="carousel">
-              <img src="" alt="" />
+              <img src={Store} alt="" />
             </div>
           </a>
         </div>
+      </main>
 
-        <section>
-          <div className="card-container">
-            <div className="first-sm-card sm-card">
-              <h2>WHAT'S HOT</h2>
-              <p className="card-title product-title">
-                A peak into our new arrivals so you can always find new drops.
+      <section>
+        <div className="card-container">
+          <div className="first-sm-card sm-card">
+            <h2>WHAT'S HOT</h2>
+            <p className="">
+              A peek into our new arrivals so you can always find new drops.
+            </p>
+          </div>
+          <div className="sm-card">
+            <img
+              src={TSL}
+              className="card-img-top"
+              alt="Tame Impala - The Slow Rush Collectors Edition"
+            />
+            <div className="card-body">
+              <p className="product-title">
+                Tame Impala - The Slow Rush Collectors Edition
               </p>
-            </div>
-            <div className="sm-card">
-              <img src="" className="card-img-top" alt="match-strike" />
-              <div className="card-body">
-                <p className="card-title product-title">
-                  Tame Impala - Currents LP
-                </p>
-                <p className="product-price">£35</p>
-                <a href="#" className="add-to-cart">
-                  add to cart
-                </a>
-              </div>
-            </div>
-            <div className="sm-card">
-              <img src="" className="card-img-top" alt="moss ashtray" />
-              <div className="card-body">
-                <p className="card-title product-title">
-                  Gorillaz - Plastic Beach LP
-                </p>
-                <p className="product-price">£38</p>
-                <a href="#" className="add-to-cart">
-                  add to cart
-                </a>
-              </div>
-            </div>
-            <div className="sm-card">
-              <img src="" className="card-img-top" alt="glupie cup" />
-              <div className="card-body">
-                <h5 className="card-title product-title">
-                  Kendrik Lamar - DAMN. LP
-                </h5>
-                <p className="product-price">£35</p>
-                <a href="#" className="add-to-cart">
-                  add to cart
-                </a>
-              </div>
+              <p className="product-price">$85</p>
+              <a href="#" className="add-to-cart">
+                add to cart
+              </a>
             </div>
           </div>
-        </section>
+          <div className="sm-card">
+            <img
+              src={Tranq}
+              className="card-img-top"
+              alt="Arctic Monkeys - Tranquility Base Hotel & Casino"
+            />
+            <div className="card-body">
+              <p className="product-title">
+                Arctic Monkeys - Tranquility Base Hotel & Casino
+              </p>
+              <p className="product-price">$30</p>
+              <a href="#" className="add-to-cart">
+                add to cart
+              </a>
+            </div>
+          </div>
+          <div className="sm-card">
+            <img
+              src={TheCar}
+              className="card-img-top"
+              alt="Arctic Monkeys - The Car"
+            />
+            <div className="card-body">
+              <h5 className="product-title">Arctic Monkeys - The Car</h5>
+              <p className="product-price">$35</p>
+              <a href="#" className="add-to-cart">
+                add to cart
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section>
         <div className="card-container">
-          <div className="first-big-card bg-card">
+          <div className="first-big-card big-card">
             <h2>a selection of our must-haves.</h2>
-            <p>
+            <p className="">
               Products that were hand picked for people who love things that are
               as beautiful as they are useful.
             </p>
           </div>
-          <div className="bg-card">
-            <img className="big-card-img" src="" alt="" />
+          <div className="big-card">
+            <img src={Edifier} alt="Edifier Speakers" />
             <div className="product-description">
-              <p className="product-name">Edifier</p>
-              <span className="product-price">$120</span>
+              <p className="product-title">Edifier</p>
+              <span className="product-price">$110</span>
               <a href="." className="add-to-cart">
                 add to cart
               </a>
             </div>
           </div>
-          <div className="bg-card">
-            <img src="" alt="" />
+          <div className="big-card">
+            <img src={ATLP} alt="Audio-Technica - Record Player" />
             <div className="product-description">
-              <p className="product-name">Edifier</p>
-              <span className="product-price">$120</span>
+              <p className="product-title">Audio-Technica - Record Player</p>
+              <span className="product-price">$125</span>
               <a href="." className="add-to-cart">
                 add to cart
               </a>
             </div>
           </div>
         </div>
-      </main>
-      <a href="./products.html">
-        <div id="all-products">
-          <h1 className="bti">ALL OF OUR PRODUCTS.</h1>
-        </div>
-      </a>
+      </section>
 
-      <div className="newsletter">
-        <h1>Subscribe to our newsletter.</h1>
-        <div id="ns-form" className="newsletter-input-form">
-          <div id="ns-input">
-            <input
-              type="email"
-              name="email"
-              autoComplete="email"
-              placeholder="email address"
-              aria-label="email address"
-              aria-invalid="false"
-              className="field-input-newsletter"
-            />
-          </div>
-          <div id="ns-buton">
-            <button type="button" className="send-btn-subscribe">
-              SIGN UP
-            </button>
-          </div>
+      <section>
+        <div className="more-products">
+          <a href="">
+            <h1>FIND MORE TREASURES HERE.</h1>
+          </a>
         </div>
-      </div>
+      </section>
 
-      <footer id="footer">
-        <div className="parent">
-          <div className="div1">
-            <a href="" className="footer-a">
-              contact us
-            </a>
-          </div>
-          <div className="div2">
-            <a href="" className="footer-a">
-              accsesibility
-            </a>
-          </div>
-          <div className="div3">
-            <a href="" className="footer-a">
-              privacy policy
-            </a>
-          </div>
-          <div className="div4">
-            <a href="" className="footer-a">
-              terms of service
-            </a>
-          </div>
-          <div className="div5">
-            <a href="#">
-              <img src="" alt="instagram" />
-            </a>
-            <a href="#">
-              <img src="" alt="twitter" />
-            </a>
-            <a href="#">
-              <img src="" alt="facebook" />
-            </a>
-          </div>
+      <section>
+        <div className="newsletter">
+          <h1>Subscribe to our newsletter.</h1>
+          <form className="newsletter-input-form">
+            <div className="input-container">
+              <input
+                type="email"
+                name="email"
+                placeholder="e-mail address"
+                aria-label="email address"
+                aria-invalid="false"
+                className="input-field-newsletter text-center"
+              />
+            </div>
+            <div className="button-container">
+              <button type="button" className="newsletter-submit">
+                SIGN UP
+              </button>
+            </div>
+          </form>
         </div>
-        <a href="">
-          <img src="" alt="cloudHouse tm" id="footer-img" />
-        </a>
-      </footer>
+      </section>
     </>
   );
 }
