@@ -99,13 +99,9 @@ function App() {
             albums for those who like a great musical selection.
           </p>
         </div>
-        <div className="carousel-container">
-          <a href="·" className="carousel-redirect">
-            <div className="carousel">
-              <img src={Store} alt="" />
-            </div>
-          </a>
-        </div>
+        <a href="·" className="carousel-redirect">
+          <img src={Store} alt="" />
+        </a>
       </main>
 
       <section>
@@ -119,7 +115,6 @@ function App() {
           <div className="sm-card">
             <img
               src={TSL}
-              className="card-img-top"
               alt="Tame Impala - The Slow Rush Collectors Edition"
             />
             <div className="card-body">
@@ -138,7 +133,6 @@ function App() {
           <div className="sm-card">
             <img
               src={Tranq}
-              className="card-img-top"
               alt="Arctic Monkeys - Tranquility Base Hotel & Casino"
             />
             <div className="card-body">
@@ -154,11 +148,7 @@ function App() {
             </div>
           </div>
           <div className="sm-card">
-            <img
-              src={TheCar}
-              className="card-img-top"
-              alt="Arctic Monkeys - The Car"
-            />
+            <img src={TheCar} alt="Arctic Monkeys - The Car" />
             <div className="card-body">
               <p className="product-title">Arctic Monkeys - The Car</p>
               <div className="price-and-cart">
@@ -207,7 +197,7 @@ function App() {
       <section>
         <div className="more-products">
           <a href="">
-            <h1>FIND MORE TREASURES HERE.</h1>
+            <h1>Find more treasures here.</h1>
           </a>
         </div>
       </section>
