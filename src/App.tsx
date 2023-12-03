@@ -1,9 +1,15 @@
 import Edifier from "./assets/edifier.png";
-import Store from "./assets/store1.png";
+import HeroImage from "./assets/hero-image.png";
 import ATLP from "./assets/at-lp.png";
 import TheCar from "./assets/thecar.png";
 import Tranq from "./assets/tranquility_760x.png";
 import TSL from "./assets/tsrtame.png";
+import instagram from "./assets/instagram.svg";
+import twitter from "./assets/twitter.svg";
+import facebook from "./assets/facebook.svg";
+import footerLogo from "./assets/footer-image.png";
+
+/* The Images displayed in this file are for estrucutural purposes only, they are not the actual final product. */
 
 import { useEffect, useState } from "react";
 
@@ -100,7 +106,7 @@ function App() {
           </p>
         </div>
         <a href="·" className="carousel-redirect">
-          <img src={Store} alt="" />
+          <img src={HeroImage} alt="" />
         </a>
       </main>
 
@@ -195,14 +201,6 @@ function App() {
       </section>
 
       <section>
-        <div className="more-products">
-          <a href="">
-            <h1>Find more treasures here.</h1>
-          </a>
-        </div>
-      </section>
-
-      <section>
         <div className="newsletter">
           <h1>Subscribe to our newsletter.</h1>
           <form className="newsletter-input-form">
@@ -224,6 +222,54 @@ function App() {
           </form>
         </div>
       </section>
+
+      <footer id="footer">
+        <div className="parent">
+          <div className="div1 footer-titles">
+            <a href="" className="footer-a">
+              contact us
+            </a>
+          </div>
+          <div className="div2">
+            <a href="" className="footer-a">
+              who we are
+            </a>
+          </div>
+          <div className="div3">
+            <a href="" className="footer-a">
+              accessibility
+            </a>
+          </div>
+          <div className="div4">
+            <a href="" className="footer-a">
+              privacy policy
+            </a>
+          </div>
+          <div className="div5">
+            <a href="" className="footer-a">
+              terms of service
+            </a>
+          </div>
+          <div className="div6">
+            <a href="">
+              <img src={instagram} alt="instagram" />
+            </a>
+            <a href="">
+              <img src={twitter} alt="twitter" />
+            </a>
+            <a href="">
+              <img src={facebook} alt="facebook" />
+            </a>
+          </div>
+        </div>
+        <a href="">
+          <img
+            src={footerLogo}
+            alt="Turntable Treasures &copy;"
+            className="footer-img"
+          />
+        </a>
+      </footer>
     </>
   );
 }

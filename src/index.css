@@ -82,6 +82,24 @@ button:focus-visible {
   --hover: #ff6429;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #321e1e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover);
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -180,14 +198,15 @@ body {
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
   background: var(--text);
   transition: background-color 0.5s ease;
+  box-shadow: 4px 4px 4.3px 0px rgba(0, 0, 0, 0.25);
 }
 
 .navbar.sticky {
   background: var(--bg);
   z-index: 100000000;
+  box-shadow: 4px 4px 4.3px 0px rgba(0, 0, 0, 0.25);
 }
 
 .container-fluid {
@@ -321,7 +340,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 75dvw;
+  width: 60dvw;
   align-self: center;
   margin: 100px auto;
 }
@@ -359,9 +378,9 @@ body {
   grid-area: 1 / 2 / 2 / 3;
 }
 
-.carousel-redirect {
-  width: auto;
-  height: auto;
+.carousel-redirect img {
+  width: 400px;
+  height: 400px;
   aspect-ratio: 1;
 }
 
@@ -637,6 +656,59 @@ body {
 
 .button-container {
   width: 50%;
+}
+
+/* Footer */
+
+.footer-a {
+  color: #321e1e;
+  font-family: Bebas Neue;
+  font-size: 3.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.12rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 2rem 1.5rem;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.div3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.div4 {
+  grid-area: 4 / 1 / 5 / 2;
+}
+.div5 {
+  grid-area: 5 / 1 / 6 / 2;
+}
+.div6 {
+  grid-area: 1 / 2 / 6 / 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.footer-img {
+  height: auto;
+  width: 98dvw;
 }
 
 /* Media Queries */
