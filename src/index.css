@@ -83,11 +83,11 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar {
+  background-color: transparent;
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg);
   border-radius: 10px;
 }
 
@@ -201,6 +201,7 @@ body {
   background: var(--text);
   transition: background-color 0.5s ease;
   box-shadow: 4px 4px 4.3px 0px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
 }
 
 .navbar.sticky {
@@ -337,25 +338,27 @@ body {
 
 .hero {
   display: flex;
+  height: 40%;
+  margin: auto;
+  padding: 100px;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: space-between;
+  align-content: center;
+  flex-shrink: 0;
   flex-wrap: wrap;
-  width: 60dvw;
-  align-self: center;
-  margin: 100px auto;
+  max-width: 2000px;
 }
 
 .explore-products {
-  grid-area: 1 / 1 / 2 / 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
 }
 
-.explore-products > h1 {
+.explore-products > h2 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 3.75rem;
+  /* font-size: 3.75rem; */
   font-style: normal;
   font-weight: 400;
   line-height: 90%;
@@ -371,16 +374,15 @@ body {
   line-height: normal;
   letter-spacing: -0.02rem;
   width: 30vw;
-  orphans: 1;
 }
 
-.carousel-container {
-  grid-area: 1 / 2 / 2 / 3;
+.carousel-redirect {
+  width: 25vw;
 }
 
-.carousel-redirect img {
-  width: 400px;
-  height: 400px;
+.carousel-redirect > img {
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1;
 }
 
@@ -407,7 +409,7 @@ body {
 .first-sm-card > h2 {
   color: #321e1e;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 3.75rem;
+  /*   font-size: 3.75rem; */
   font-style: normal;
   letter-spacing: -0.1rem;
   font-weight: 400;
@@ -453,7 +455,7 @@ body {
 .first-big-card > h2 {
   margin: 2.5rem 1.5rem;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 3.75rem;
+  /* font-size: 3.75rem; */
   font-style: normal;
   font-weight: 400;
   line-height: 90%;
@@ -530,69 +532,18 @@ body {
   line-height: normal;
   text-decoration-line: underline;
 }
-
-/* More Products */
-
-.more-products {
-  background-color: rgb(34, 50, 30);
-  height: 382px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.more-products > a > h1 {
-  color: #f4f1e0;
-  font-family: Bebas Neue;
-  font-size: 8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.24rem;
-  text-transform: uppercase;
-}
-
-.more-products > a {
-  color: #f4f1e0;
-  position: relative;
-  text-decoration: none;
-}
-
-.more-products > a:hover::before {
-  transform: scaleX(1);
-}
-
-.more-products > a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 10px;
-  bottom: 0;
-  left: 0;
-  background-color: #f4f1e0;
-  transform: scaleX(0);
-  transform-origin: top left;
-  transition: transform 0.3s ease;
-  margin-bottom: 20px;
-}
-
 /* Newsletter */
 
 .newsletter {
   display: flex;
+  flex-wrap: wrap;
+  padding: 117px;
   justify-content: space-evenly;
   align-items: center;
-  align-items: center;
   background-color: #321e1e;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 70vh;
-  padding-top: 10%;
-  padding-bottom: 10%;
 }
 
-.newsletter > h1 {
+.newsletter > h2 {
   color: #f4f1e0;
   font-family: Bebas Neue;
   font-size: 8rem;
@@ -617,10 +568,7 @@ body {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
-  box-sizing: border-box;
-  border-radius: 0px;
-  padding: 0px 0px 0px 16px;
+  padding-left: 16px;
   height: 70px;
   color: #321e1e;
   font-size: 20px;
@@ -713,7 +661,7 @@ body {
 
 /* Media Queries */
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .primary-navigation {
     padding: min(30vh, 50rem) 1em;
     gap: 3rem;
@@ -721,19 +669,79 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
+  .primary-navigation {
+    padding: min(20vh, 50rem) 1em;
+    gap: 3rem;
+    list-style-type: none;
+  }
+
   .nav-a {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    row-gap: 30px;
+  }
+
+  .newsletter > h2 {
+    font-size: 5rem;
+    text-align: center;
+    letter-spacing: -0.15rem;
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 768px) {
+  .nav-a {
+    font-size: 4rem;
+  }
+
+  .box .turntable-treasures {
+    font-size: 5rem;
+    letter-spacing: -0.09rem;
+  }
+
+  .hero {
+    display: flex;
+    padding: 60px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .explore-products > h2 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .explore-products > p {
+    width: 50vw;
+  }
+
+  .carousel-redirect {
+    width: 50vw;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .newsletter > h2 {
+    /* font-size: 5rem; */
+    text-align: center;
+    letter-spacing: -0.15rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
   .primary-navigation {
     inset: 0 0 0 0;
     transform: translateX(-100%);
     padding: min(20vh, 10rem) 1em;
     gap: 2rem;
     transition: transform 250ms ease-out;
+    z-index: 1000;
+    overflow: hidden;
   }
 
   .primary-navigation[data-visible="true"] {
@@ -751,6 +759,50 @@ body {
   }
 
   .nav-a {
-    font-size: 5rem;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .primary-navigation {
+    display: block;
+  }
+
+  .hero {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .explore-products {
+    height: 0px;
+    width: 25px;
+    rotate: -90deg;
+  }
+
+  .explore-products > h2 {
+    /* font-size: 39px; */
+    font-size: calc(2.7rem + 30 * (80vw - 450px) / (1240 - 600));
+    white-space: nowrap;
+  }
+
+  .explore-products > p {
+    display: none;
+  }
+
+  .carousel-redirect {
+    width: 60vw;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  h2 {
+    font-size: calc(1.7rem + 40 * (100vw - 375px) / (1540 - 375));
+  }
+
+  .nav-a {
+    font-size: calc(2rem + 40 * (100vw - 375px) / (1540 - 375));
   }
 }

@@ -59,22 +59,22 @@ function App() {
             className="primary-navigation"
           >
             <li>
-              <a href="./createAccount.html" className="nav-a">
+              <a href="" className="nav-a">
                 create account
               </a>
             </li>
             <li>
-              <a href="./login.html" className="nav-a">
+              <a href="" className="nav-a">
                 login
               </a>
             </li>
             <li>
-              <a href="./products.html" className="nav-a">
+              <a href="" className="nav-a">
                 all products
               </a>
             </li>
             <li>
-              <a href="./about.html" className="nav-a">
+              <a href="" className="nav-a">
                 who we are
               </a>
             </li>
@@ -97,7 +97,7 @@ function App() {
       </header>
       <main className="hero">
         <div className="explore-products">
-          <h1>Explore our products.</h1>
+          <h2>Explore our products</h2>
           <p>
             Looking for the perfect musical accessory to add to your collection?
             Or perhaps an LP to listen to while cooking that dinner with your
@@ -171,7 +171,7 @@ function App() {
       <section>
         <div className="card-container">
           <div className="first-big-card big-card">
-            <h2>a selection of our must-haves.</h2>
+            <h2>a selection of our must-haves</h2>
             <p className="">
               Products that were hand picked for people who love things that are
               as beautiful as they are useful.
@@ -202,7 +202,7 @@ function App() {
 
       <section>
         <div className="newsletter">
-          <h1>Subscribe to our newsletter.</h1>
+          <h2>Subscribe to our newsletter.</h2>
           <form className="newsletter-input-form">
             <div className="input-container">
               <input
