@@ -100,7 +100,7 @@ function App() {
           <h2>Explore our products</h2>
           <p>
             Looking for the perfect musical accessory to add to your collection?
-            Or perhaps an LP to listen to while cooking that dinner with your
+            Or perhaps an LP to set the mood to while cooking dinner with your
             partner? Turntable Treasures offers a range of, accsesories and
             albums for those who like a great musical selection.
           </p>
@@ -114,8 +114,9 @@ function App() {
         <div className="card-container">
           <div className="first-sm-card sm-card">
             <h2>WHAT'S HOT</h2>
-            <p className="">
-              A peek into our new arrivals so you can always find new drops.
+            <p>
+              Take a peek into our new arrivals so you can always find new
+              drops.
             </p>
           </div>
           <div className="sm-card">
@@ -170,9 +171,9 @@ function App() {
 
       <section>
         <div className="card-container">
-          <div className="first-big-card big-card">
+          <div className="first-big-card">
             <h2>a selection of our must-haves</h2>
-            <p className="">
+            <p>
               Products that were hand picked for people who love things that are
               as beautiful as they are useful.
             </p>
@@ -211,7 +212,7 @@ function App() {
                 placeholder="e-mail address"
                 aria-label="email address"
                 aria-invalid="false"
-                className="input-field-newsletter text-center"
+                className="input-field-newsletter"
               />
             </div>
             <div className="button-container">
