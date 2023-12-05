@@ -362,7 +362,7 @@ body {
 
 .explore-products > h2 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: --fs-md;
+  font-size: clamp(1rem, 11vw - 0.45rem, 3.75rem);
   font-style: normal;
   font-weight: 400;
   line-height: 90%;
@@ -677,26 +677,17 @@ body {
     list-style-type: none;
   }
 
-  .nav-a {
-    font-size: var(--fs-md);
-  }
-
   .hero {
     row-gap: 30px;
   }
 
   .newsletter > h2 {
-    font-size: var(--fs-md);
     text-align: center;
     letter-spacing: -0.15rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .nav-a {
-    font-size: var(--fs-md);
-  }
-
   .box .turntable-treasures {
     font-size: var(--fs-xl);
     letter-spacing: -0.09rem;
@@ -712,7 +703,6 @@ body {
   }
 
   .explore-products > h2 {
-    font-size: var(--fs-md);
     line-height: 1.1;
     text-align: center;
   }
@@ -728,7 +718,6 @@ body {
   }
 
   .newsletter > h2 {
-    font-size: var(--fs-xl);
     text-align: center;
     letter-spacing: -0.15rem;
   }
@@ -759,10 +748,6 @@ body {
     color: var(--hover);
   }
 
-  .nav-a {
-    font-size: var(--fs-md);
-  }
-
   .explore-products > p {
     width: 100%;
   }
@@ -789,7 +774,6 @@ body {
 
   .explore-products > h2 {
     /* font-size: 39px; */
-    font-size: calc(2.7rem + 30 * (80vw - 450px) / (1240 - 600));
     white-space: nowrap;
   }
 
