@@ -10,7 +10,9 @@ public interface IProductService {
 
     Product findById(Long productId);
 
-    Product save(Product product);
+    Product saveProduct(Product product);
+
+    void updateProduct(Product product);
 
     void deleteById(Long productId);
 }
