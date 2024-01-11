@@ -17,6 +17,10 @@ function App() {
   const [isSticky, setIsSticky] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(false);
 
+  const handleNavToggle = () => {
+    setIsNavVisible((prev) => !prev);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 0);
@@ -29,14 +33,10 @@ function App() {
     };
   }, []);
 
-  const handleNavToggle = () => {
-    setIsNavVisible((prev) => !prev);
-  };
-
   const [isCartVisible, setIsCartVisible] = useState(false);
 
   const toggleCartVisibility = () => {
-    setIsCartVisible(!isCartVisible);
+    setIsCartVisible((prev) => !prev);
   };
 
   return (
@@ -82,7 +82,7 @@ function App() {
 
           <button
             onClick={toggleCartVisibility}
-            aria-controls="cart-btn"
+            aria-controls="cart-menu"
             aria-expanded={isCartVisible}
             className="mobile-nav-toggle-cart"
           >
@@ -90,6 +90,37 @@ function App() {
               {isCartVisible ? "Close" : "Cart"}
             </span>
           </button>
+          <section
+            id="cart-menu"
+            className="cart-menu"
+            data-visible={isCartVisible}
+          >
+            {items.length === 0 && (
+              <div>
+                <h1 className="cart-title">There's nothing in your cart!</h1>
+                <p className="cart-text">We can fix that</p>
+                <button type="button" className="cart-button-explore">
+                  Explore products
+                </button>
+              </div>
+            )}
+            {items.map((item) => {
+              return (
+                <>
+                  <h1 className="cart-title">
+                    cart{"(" + itemCartCount + ")"}
+                  </h1>
+                  <div>
+                    <img src="" alt="" className="cart-item-image" />
+                    <p className="cart-item-title">{item.name}</p>
+                    <p className="cart-item-category">{item.category}</p>
+                    <p className="cart-item-price">{item.price}</p>
+                    <div></div>
+                  </div>
+                </>
+              );
+            })}
+          </section>
         </nav>
         <div className="box">
           <h1 className="turntable-treasures">TURNTABLE TREASURES</h1>
@@ -181,7 +212,7 @@ function App() {
           <div className="big-card">
             <img src={Edifier} alt="Edifier Speakers" />
             <div className="product-description">
-              <p className="product-title">Edifier</p>
+              <p className="product-title">Edifier - R1855DB</p>
               <span className="product-price">$110</span>
               <a href="." className="add-to-cart">
                 add to cart
@@ -191,7 +222,7 @@ function App() {
           <div className="big-card">
             <img src={ATLP} alt="Audio-Technica - Record Player" />
             <div className="product-description">
-              <p className="product-title">Audio-Technica - Record Player</p>
+              <p className="product-title">Audio-Technica - AT120X SV</p>
               <span className="product-price">$125</span>
               <a href="." className="add-to-cart">
                 add to cart
@@ -253,13 +284,13 @@ function App() {
           </div>
           <div className="div6">
             <a href="">
-              <img src={instagram} alt="instagram" />
+              <img src={instagram} alt="instagram" className="footer-icons" />
             </a>
             <a href="">
-              <img src={twitter} alt="twitter" />
+              <img src={twitter} alt="twitter" className="footer-icons" />
             </a>
             <a href="">
-              <img src={facebook} alt="facebook" />
+              <img src={facebook} alt="facebook" className="footer-icons" />
             </a>
           </div>
         </div>
