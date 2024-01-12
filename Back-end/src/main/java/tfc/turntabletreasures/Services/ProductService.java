@@ -45,7 +45,6 @@ public class ProductService implements IProductService{
             productExists.setProductDescription(product.getProductDescription());
             productExists.setProductPrice(product.getProductPrice());
             productExists.setProductImage(product.getProductImage());
-            productExists.setProductCategory(product.getProductCategory());
             productExists.setProductStock(product.getProductStock());
 
             productRepository.save(productExists);
