@@ -1,7 +1,9 @@
 package tfc.turntabletreasures.Entities;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 
+@Entity
 public class Speaker extends Product{
 
     @Column(name = "brand", length = 100, nullable = false)
