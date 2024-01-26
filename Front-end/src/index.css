@@ -342,7 +342,7 @@ body {
 
 /* Cart */
 
-.cart-menu {
+/* .cart-menu {
   position: fixed;
   display: flex;
   align-content: center;
@@ -354,7 +354,7 @@ body {
   background-color: #f4f1e0;
   transform: translateX(63%);
   transition: transform 250ms ease-out;
-}
+} */
 
 /* Hero Section */
 

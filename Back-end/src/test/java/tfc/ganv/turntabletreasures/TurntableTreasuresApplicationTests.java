@@ -1,4 +1,4 @@
-package tfc.turntabletreasures;
+package tfc.ganv.turntabletreasures;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

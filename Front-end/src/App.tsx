@@ -90,12 +90,12 @@ function App() {
               {isCartVisible ? "Close" : "Cart"}
             </span>
           </button>
-          <section
+          {/* <section
             id="cart-menu"
             className="cart-menu"
             data-visible={isCartVisible}
           >
-            {items.length === 0 && (
+            {products.length === 0 && (
               <div>
                 <h1 className="cart-title">There's nothing in your cart!</h1>
                 <p className="cart-text">We can fix that</p>
@@ -104,23 +104,23 @@ function App() {
                 </button>
               </div>
             )}
-            {items.map((item) => {
+            {products.map((product) => {
               return (
                 <>
                   <h1 className="cart-title">
-                    cart{"(" + itemCartCount + ")"}
+                    cart{"(" + productCartCount + ")"}
                   </h1>
                   <div>
-                    <img src="" alt="" className="cart-item-image" />
-                    <p className="cart-item-title">{item.name}</p>
-                    <p className="cart-item-category">{item.category}</p>
-                    <p className="cart-item-price">{item.price}</p>
+                    <img src="" alt="" className="cart-product-image" />
+                    <p className="cart-product-title">{product.name}</p>
+                    <p className="cart-product-category">{product.category}</p>
+                    <p className="cart-product-price">{product.price}</p>
                     <div></div>
                   </div>
                 </>
               );
             })}
-          </section>
+          </section> */}
         </nav>
         <div className="box">
           <h1 className="turntable-treasures">TURNTABLE TREASURES</h1>

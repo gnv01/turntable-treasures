@@ -8,11 +8,11 @@
 		<version>3.2.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>tfc.turntable-treasures</groupId>
+	<groupId>tfc.ganv.turntable-treasures</groupId>
 	<artifactId>Turntable-Treasures</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Turntable-Treasures</name>
-	<description>Trabajo final de Curso.</description>
+	<description>TFC Gustavo Nieto</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
