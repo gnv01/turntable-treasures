@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -25,7 +27,7 @@ public class Album {
     @Column(name = "artist", nullable = false)
     private String artistName;
 
-    @Column(name = "date", nullable = false)
+    @Column(name = "date")
     private String albumDate;
 
     @Column(name = "genre", nullable = false)
@@ -37,10 +39,17 @@ public class Album {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Product product;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
+    /* @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Song> songs; */
+
+    @OneToMany(mappedBy = "album")
     private List<Song> songs;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    private SpecialEdition specialEdition;
+    @ManyToOne
+    @JoinColumn(name = "base_album_id")
+    private Album baseAlbum;
+
+    @OneToMany(mappedBy = "baseAlbum")
+    private List<SpecialEdition> specialEditions;
     
 }
