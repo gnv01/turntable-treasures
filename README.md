@@ -4,4 +4,4 @@ This is my Bachelor's Thesis, a project focused on an e-commerce platform for th
 
 The logo and other visual elements were designed in collaboration with Alejandro Nieto.
 
-**DISCLAIMER: This is not a real shop, it´s just a mockup.**
+**DISCLAIMER: This is not a real shop.**
