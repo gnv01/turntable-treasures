@@ -127,21 +127,18 @@ body {
   background-color: #f4f1e0;
 }
 
-/* Header */
-
-.header {
-  background-image: url(../src/assets/header-image.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 80vh;
-}
+/* Hero */
 
 .box {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-image: url(../src/assets/header-image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
 }
 
 .box .turntable-treasures {
