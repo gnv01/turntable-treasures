@@ -33,7 +33,7 @@ public class Song {
 
     @Column(name = "duration")
     @Temporal(TemporalType.TIME)
-    @DateTimeFormat(pattern = "HH:mm:ss")
+    @DateTimeFormat(pattern = "mm:ss") /* CHANGED THE PATTERN OF THE DATE FROM HH:mm:ss TO mm:ss */
     private Date songDuration;
 
     @ManyToOne

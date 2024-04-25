@@ -565,8 +565,4 @@ INSERT INTO songs (name, duration, position, album_id) VALUES
 ('The Sleep', '00:05:47', 'D2', 35),
 ('The Art Of Shredding', '00:04:16', 'D3', 35);
 
-/* SYMBOLS
-
-’ apostrophe
-
- */
+/* TODO the User and Sells Table and inserts */
