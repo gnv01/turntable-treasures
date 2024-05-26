@@ -4,8 +4,6 @@ import { Home } from "./pages/Home";
 import { Products } from "./pages/Products";
 import { About } from "./pages/About";
 
-/* The Images displayed in this file are for estrucutural purposes only, they are not the actual final product. */
-
 function App() {
   return (
     <>

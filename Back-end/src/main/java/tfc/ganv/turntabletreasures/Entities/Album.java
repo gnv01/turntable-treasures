@@ -2,14 +2,15 @@ package tfc.ganv.turntabletreasures.Entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -17,12 +18,13 @@ import lombok.Data;
 
 @Data
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "albums")
 public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idAlbum;
 
     @Column(name = "artist", nullable = false)
     private String artistName;
@@ -45,10 +47,11 @@ public class Album {
     @OneToMany(mappedBy = "album")
     private List<Song> songs;
 
-    @ManyToOne
+    /* @ManyToOne
     @JoinColumn(name = "base_album_id")
-    private Album baseAlbum;
+    private Album baseAlbum; */
 
+    @JsonIgnore
     @OneToMany(mappedBy = "baseAlbum")
     private List<SpecialEdition> specialEditions;
     

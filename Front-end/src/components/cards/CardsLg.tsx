@@ -1,7 +1,28 @@
-import Edifier from "../../assets/edifier.png";
-import ATLP from "../../assets/at-lp.png";
+import { useEffect, useState } from "react";
+import { getProducts } from "../../services/ProductService";
+import { ProductInterface } from "../../interfaces/ProductInterface";
 
 export function CardsLg() {
+  const [products, setProducts] = useState<ProductInterface[]>([]);
+
+  useEffect(() => {
+    getProducts()
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  // IDs of the products we want to display in the large cards
+  const specificProductIds = [36, 37];
+
+  // Filter the products array to only include the products with the specific IDs
+  const specificProducts = products.filter((product) =>
+    specificProductIds.includes(product.id)
+  );
+
   return (
     <section>
       <div className="card-container">
@@ -12,26 +33,21 @@ export function CardsLg() {
             as beautiful as they are useful.
           </p>
         </div>
-        <div className="big-card">
-          <img src={Edifier} alt="Edifier Speakers" />
-          <div className="product-description">
-            <p className="product-title">Edifier - R1855DB</p>
-            <span className="product-price">$110</span>
-            <a href="." className="add-to-cart">
-              add to cart
-            </a>
+
+        {specificProducts.map((product) => (
+          <div className="big-card" key={product.id}>
+            <img src={product.productImage} alt="Image of the product" />
+            <div className="card-body">
+              <p className="product-title">{product.productName}</p>
+              <div className="price-and-cart">
+                <p className="product-price">€{product.productPrice}</p>
+                <a href="" className="add-to-cart">
+                  add to cart
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="big-card">
-          <img src={ATLP} alt="Audio-Technica - Record Player" />
-          <div className="product-description">
-            <p className="product-title">Audio-Technica - AT120X SV</p>
-            <span className="product-price">$125</span>
-            <a href="." className="add-to-cart">
-              add to cart
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

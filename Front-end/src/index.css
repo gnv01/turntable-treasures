@@ -72,7 +72,7 @@ button:focus-visible {
 }
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&display=swap");
 
 :root {
   --bg: #f4f1e0;
@@ -97,7 +97,6 @@ button:focus-visible {
 
 ::-webkit-scrollbar-thumb {
   background: #321e1e;
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -127,6 +126,13 @@ body {
   background-color: #f4f1e0;
 }
 
+/* General text properties */
+
+.highlight {
+  font-weight: 900;
+  cursor: help;
+}
+
 /* Hero */
 
 .box {
@@ -141,17 +147,30 @@ body {
   height: 80vh;
 }
 
-.box .turntable-treasures {
-  color: #f4f1e0;
+.turntable-treasures {
+  color: var(--titles);
   font-family: "Bebas Neue", Helvetica;
   font-size: var(--fs-xl);
   font-weight: 400;
   left: 304px;
   letter-spacing: -3.84px;
   line-height: normal;
-  text-align: right;
   top: 324px;
   text-align: center;
+}
+
+.big-titles {
+  color: var(--text);
+  font-family: "Bebas Neue", Helvetica;
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  letter-spacing: -3.84px;
+  line-height: normal;
+  text-align: center;
+  background-color: #f4f1e0;
+  padding: 25px 60px;
+  line-height: 81%;
+  letter-spacing: -3%;
 }
 
 /* NavBar */
@@ -228,24 +247,14 @@ body {
 }
 
 .mobile-nav-toggle-cart {
-  color: var(--titles);
   position: fixed;
   z-index: 9999;
-  font-family: Bebas Neue;
-  font-size: var(--fs-sm);
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: uppercase;
-  transition: color 0.5s ease;
-  display: block;
-  position: fixed;
+  background: none;
   border: 0;
   width: 2.5rem;
   aspect-ratio: 1;
   top: 1.5rem;
   right: 2rem;
-  background: none;
 }
 
 .nav-a {
@@ -289,11 +298,11 @@ body {
   flex-direction: column;
   padding: min(50vh, 30rem) 12em;
   margin: 0;
-  background-color: #f4f1e098;
+  background-color: #f4f1e0;
   backdrop-filter: blur(1rem);
   gap: 2rem;
   transform: translateX(-100%);
-  transition: transform 250ms ease-out;
+  transition: transform 0.35s cubic-bezier(0.24, 0, 0, 1);
   list-style-type: none;
 }
 
@@ -323,6 +332,10 @@ body {
   background: none;
 }
 
+.mobile-nav-toggle[aria-expanded="true"] .menu-button {
+  color: var(--text);
+}
+
 .menu-button:hover {
   color: var(--hover);
   transition: color 0.2s ease;
@@ -339,19 +352,73 @@ body {
 
 /* Cart */
 
-/* .cart-menu {
+.cart-menu {
   position: fixed;
   display: flex;
   align-content: center;
   z-index: 1000;
   inset: 0 0 0 0;
   flex-direction: column;
-  padding: min(50vh, 30rem) 12em;
+  /* padding: min(50vh, 30rem) 12em; */
   margin: 0;
   background-color: #f4f1e0;
-  transform: translateX(63%);
+  max-width: 30%;
+  transform: translateX(350%);
   transition: transform 250ms ease-out;
-} */
+  color: var(--text);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cart-menu[data-visible="true"] {
+  transform: translateX(235%);
+}
+
+.mobile-nav-toggle-cart[aria-expanded="true"] .menu-button {
+  color: var(--text);
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cart-title {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-size: 40px;
+  font-weight: 400;
+  justify-content: center;
+}
+
+.cart-text {
+  font-family: Arimo;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 400;
+  justify-content: center;
+}
+
+.cart-button-explore {
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  background-color: #321e1e;
+  color: #f4f1e0;
+  cursor: pointer;
+  padding: 10px 80px;
+  margin-top: 100px;
+  transition: background-color 0.2s ease;
+}
+
+.cart-button-explore:hover {
+  background-color: #ff6429;
+}
 
 /* Hero Section */
 
@@ -389,7 +456,7 @@ body {
   font-family: Arimo, sans-serif;
   font-size: var(--fs-sm);
   font-style: normal;
-  font-weight: bold;
+  font-weight: 400;
   line-height: normal;
   letter-spacing: -0.02rem;
   width: 40vw;
@@ -436,7 +503,7 @@ body {
   text-align: right;
   font-family: Arimo;
   font-size: var(--fs-sm);
-  font-weight: bold;
+  font-weight: 400;
   line-height: normal;
   letter-spacing: -0.02rem;
 }
@@ -453,7 +520,7 @@ body {
   font-family: Arimo;
   font-size: var(--fs-sm);
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
 }
 
@@ -486,7 +553,7 @@ body {
   text-align: right;
   font-family: Arimo;
   font-size: var(--fs-sm);
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
   letter-spacing: -0.02rem;
 }
@@ -499,11 +566,6 @@ body {
   border: 1px #b0ad9c solid;
   box-sizing: border-box;
   overflow: hidden;
-  font-family: Arimo, sans-serif;
-  font-size: var(--fs-md);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
   height: auto;
 }
 
@@ -514,6 +576,11 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   height: 100%;
+  font-family: Arimo, sans-serif;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 /* Products */
@@ -550,6 +617,24 @@ body {
   line-height: normal;
   text-decoration-line: underline;
 }
+
+.product-pagination {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-image: url(../src/assets/products-hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+}
+
 /* Newsletter */
 
 .newsletter {
@@ -622,6 +707,31 @@ body {
   width: 50%;
 }
 
+/* About */
+
+.about {
+  margin-top: 7rem;
+  margin-inline: auto;
+  max-width: 50vw;
+}
+
+.about p {
+  font-family: Arimo;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 50vw;
+}
+
+.terms-of-service {
+  font-family: Arimo;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 /* Footer */
 
 .footer-a {
@@ -639,7 +749,7 @@ body {
 .parent {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   padding: 2rem 1.5rem;
@@ -655,13 +765,7 @@ body {
   grid-area: 3 / 1 / 4 / 2;
 }
 .div4 {
-  grid-area: 4 / 1 / 5 / 2;
-}
-.div5 {
-  grid-area: 5 / 1 / 6 / 2;
-}
-.div6 {
-  grid-area: 1 / 2 / 6 / 3;
+  grid-area: 1 / 2 / 4 / 3;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

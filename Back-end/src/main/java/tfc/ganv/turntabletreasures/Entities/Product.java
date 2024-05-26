@@ -1,6 +1,8 @@
 package tfc.ganv.turntabletreasures.Entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -15,6 +17,7 @@ import tfc.ganv.turntabletreasures.Enum.ProductCategory;
 
 @Data
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "products")
 public class Product {
 

@@ -16,7 +16,7 @@ public class SpecialEdition {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idSE;
 
     @ManyToOne
     @JoinColumn(name = "base_album_id")

@@ -9,12 +9,12 @@ export function Footer() {
       <div className="parent">
         <div className="div1 footer-titles">
           <a href="" className="footer-a">
-            contact us
+            who we are
           </a>
         </div>
         <div className="div2">
           <a href="" className="footer-a">
-            who we are
+            terms of service
           </a>
         </div>
         <div className="div3">
@@ -23,23 +23,13 @@ export function Footer() {
           </a>
         </div>
         <div className="div4">
-          <a href="" className="footer-a">
-            privacy policy
-          </a>
-        </div>
-        <div className="div5">
-          <a href="" className="footer-a">
-            terms of service
-          </a>
-        </div>
-        <div className="div6">
-          <a href="">
+          <a href="/">
             <img src={instagram} alt="instagram" className="footer-icons" />
           </a>
-          <a href="">
+          <a href="/">
             <img src={twitter} alt="twitter" className="footer-icons" />
           </a>
-          <a href="">
+          <a href="/">
             <img src={facebook} alt="facebook" className="footer-icons" />
           </a>
         </div>

@@ -1,8 +1,20 @@
-import TheCar from "../../assets/thecar.png";
-import Tranquility from "../../assets/tranquility_760x.png";
-import TSL from "../../assets/tsrtame.png";
+import { useEffect, useState } from "react";
+import { getProducts } from "../../services/ProductService";
+import { ProductInterface } from "../../interfaces/ProductInterface";
 
 export function CardsSm() {
+  const [products, setProducts] = useState<ProductInterface[]>([]);
+
+  useEffect(() => {
+    getProducts()
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <section>
       <div className="card-container">
@@ -12,50 +24,21 @@ export function CardsSm() {
             Take a peek into our new arrivals so you can always find new drops.
           </p>
         </div>
-        <div className="sm-card">
-          <img src={TSL} alt="Tame Impala - The Slow Rush Collectors Edition" />
-          <div className="card-body">
-            <p className="product-title">
-              Tame Impala - The Slow Rush Collectors Edition
-            </p>
 
-            <div className="price-and-cart">
-              <p className="product-price">$85</p>
-              <a href="#" className="add-to-cart">
-                add to cart
-              </a>
+        {products.slice(0, 3).map((product) => (
+          <div className="sm-card" key={product.id}>
+            <img src={product.productImage} alt="Image of the product" />
+            <div className="card-body">
+              <p className="product-title">{product.productName}</p>
+              <div className="price-and-cart">
+                <p className="product-price">€{product.productPrice}</p>
+                <a href="" className="add-to-cart">
+                  add to cart
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="sm-card">
-          <img
-            src={Tranquility}
-            alt="Arctic Monkeys - Tranquility Base Hotel & Casino"
-          />
-          <div className="card-body">
-            <p className="product-title">
-              Arctic Monkeys - Tranquility Base Hotel & Casino
-            </p>
-            <div className="price-and-cart">
-              <p className="product-price">$30</p>
-              <a href="#" className="add-to-cart">
-                add to cart
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="sm-card">
-          <img src={TheCar} alt="Arctic Monkeys - The Car" />
-          <div className="card-body">
-            <p className="product-title">Arctic Monkeys - The Car</p>
-            <div className="price-and-cart">
-              <p className="product-price">$35</p>
-              <a href="#" className="add-to-cart">
-                add to cart
-              </a>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

@@ -16,7 +16,7 @@ export function Hero() {
             albums for those who like a great musical selection.
           </p>
         </div>
-        <a href="·" className="carousel-redirect">
+        <a href="/products" className="carousel-redirect">
           <img src={HeroImage} alt="" />
         </a>
       </section>

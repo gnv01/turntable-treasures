@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +25,7 @@ public class Song {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idSong;
 
     @Column(name = "name", nullable = false)
     private String songName;
@@ -36,6 +38,7 @@ public class Song {
     @DateTimeFormat(pattern = "mm:ss") /* CHANGED THE PATTERN OF THE DATE FROM HH:mm:ss TO mm:ss */
     private Date songDuration;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "album_id")
     private Album album;
