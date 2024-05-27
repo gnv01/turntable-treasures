@@ -2,7 +2,6 @@ package tfc.ganv.turntabletreasures.Entities;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -41,17 +40,9 @@ public class Album {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Product product;
 
-    /* @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Song> songs; */
-
     @OneToMany(mappedBy = "album")
     private List<Song> songs;
 
-    /* @ManyToOne
-    @JoinColumn(name = "base_album_id")
-    private Album baseAlbum; */
-
-    @JsonIgnore
     @OneToMany(mappedBy = "baseAlbum")
     private List<SpecialEdition> specialEditions;
     

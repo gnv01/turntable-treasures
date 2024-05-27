@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../../services/ProductService";
-import { ProductInterface } from "../../interfaces/ProductInterface";
+import { ProductInterface } from "../../types/ProductInterface";
 
 export function CardsSm() {
   const [products, setProducts] = useState<ProductInterface[]>([]);
@@ -25,13 +25,15 @@ export function CardsSm() {
           </p>
         </div>
 
-        {products.slice(0, 3).map((product) => (
-          <div className="sm-card" key={product.id}>
-            <img src={product.productImage} alt="Image of the product" />
+        {products.slice(0, 3).map((products) => (
+          <div className="sm-card" key={products.id}>
+            <img src={products.productImage} alt="Image of the product" />
             <div className="card-body">
-              <p className="product-title">{product.productName}</p>
+              <p className="product-title">
+                {products.album.artistName} - {products.productName}
+              </p>
               <div className="price-and-cart">
-                <p className="product-price">€{product.productPrice}</p>
+                <p className="product-price">€{products.productPrice}</p>
                 <a href="" className="add-to-cart">
                   add to cart
                 </a>

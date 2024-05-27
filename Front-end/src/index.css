@@ -173,6 +173,10 @@ body {
   letter-spacing: -3%;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 /* NavBar */
 
 .nav-a {
@@ -616,11 +620,39 @@ body {
   font-weight: 400;
   line-height: normal;
   text-decoration-line: underline;
+  width: fit-content;
+  transition: color 0.2s ease;
+}
+
+.add-to-cart:hover {
+  color: var(--hover);
 }
 
 .product-pagination {
   display: flex;
   flex-wrap: wrap;
+}
+
+.page-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100vw;
+}
+
+.page-controls > ul {
+  display: flex;
+  list-style-type: none;
+  padding-inline: 10px;
+  gap: 25px;
+  font-family: "Bebas Neue", Helvetica;
+  font-size: var(--fs-sm);
+  color: var(--text);
+}
+
+.page-link:visited {
+  color: var(--text);
 }
 
 .products-hero {
@@ -655,7 +687,7 @@ body {
   line-height: normal;
   letter-spacing: -0.24rem;
   text-transform: uppercase;
-  width: autos;
+  width: auto;
 }
 
 .newsletter-input-form {

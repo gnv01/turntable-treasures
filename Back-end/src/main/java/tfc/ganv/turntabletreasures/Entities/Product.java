@@ -10,7 +10,9 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import tfc.ganv.turntabletreasures.Enum.ProductCategory;
@@ -47,4 +49,8 @@ public class Product {
 
     @Column(name = "brand")
     private String productBrand;
+
+    @OneToOne
+    @JoinColumn(name = "album_id")
+    private Album album;
 }

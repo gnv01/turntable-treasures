@@ -1,20 +1,6 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../services/ProductService";
-import { ProductInterface } from "../interfaces/ProductInterface";
 
 export function NavBar() {
-  const [products, setProducts] = useState<ProductInterface[]>([]);
-
-  useEffect(() => {
-    getProducts()
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
   const [isNavVisible, setIsNavVisible] = useState(false);
 
   const handleNavToggle = () => {

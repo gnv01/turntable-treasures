@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../../services/ProductService";
-import { ProductInterface } from "../../interfaces/ProductInterface";
+import { ProductInterface } from "../../types/ProductInterface";
 
 export function CardsLg() {
   const [products, setProducts] = useState<ProductInterface[]>([]);
@@ -38,7 +38,9 @@ export function CardsLg() {
           <div className="big-card" key={product.id}>
             <img src={product.productImage} alt="Image of the product" />
             <div className="card-body">
-              <p className="product-title">{product.productName}</p>
+              <p className="product-title">
+                {product.productBrand} - {product.productName}
+              </p>
               <div className="price-and-cart">
                 <p className="product-price">€{product.productPrice}</p>
                 <a href="" className="add-to-cart">
