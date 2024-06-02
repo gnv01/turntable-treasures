@@ -23,6 +23,10 @@ const Pagination: React.FC<PaginationProps> = ({
   ) => {
     event.preventDefault();
     paginate(number);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (

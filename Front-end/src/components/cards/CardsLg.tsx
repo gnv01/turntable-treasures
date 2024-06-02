@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProducts } from "../../services/ProductService";
 import { ProductInterface } from "../../types/ProductInterface";
+import { CartContext } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export function CardsLg() {
   const [products, setProducts] = useState<ProductInterface[]>([]);
@@ -15,13 +17,15 @@ export function CardsLg() {
       });
   }, []);
 
-  // IDs of the products we want to display in the large cards
+  const { addToCart } = useContext(CartContext)!;
+
   const specificProductIds = [36, 37];
 
-  // Filter the products array to only include the products with the specific IDs
   const specificProducts = products.filter((product) =>
     specificProductIds.includes(product.id)
   );
+
+  const navigate = useNavigate();
 
   return (
     <section>
@@ -36,16 +40,33 @@ export function CardsLg() {
 
         {specificProducts.map((product) => (
           <div className="big-card" key={product.id}>
-            <img src={product.productImage} alt="Image of the product" />
+            <img
+              onClick={() => navigate(`/products/${product.id}`)}
+              src={product.productImage}
+              alt="Image of the product"
+            />
             <div className="card-body">
               <p className="product-title">
-                {product.productBrand} - {product.productName}
+                {product.album
+                  ? `${product.album.artistName} - `
+                  : `${product.productBrand} - `}
+                {product.productName}
               </p>
               <div className="price-and-cart">
                 <p className="product-price">€{product.productPrice}</p>
-                <a href="" className="add-to-cart">
+                <p className="product-category">{product.productCategory}</p>
+                <button
+                  className="add-to-cart"
+                  onClick={() =>
+                    addToCart({
+                      id: product.id,
+                      product: product,
+                      quantity: 1,
+                    })
+                  }
+                >
                   add to cart
-                </a>
+                </button>
               </div>
             </div>
           </div>

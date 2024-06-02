@@ -35,16 +35,12 @@ public class Song {
 
     @Column(name = "duration")
     @Temporal(TemporalType.TIME)
-    @DateTimeFormat(pattern = "mm:ss") /* CHANGED THE PATTERN OF THE DATE FROM HH:mm:ss TO mm:ss */
+    @DateTimeFormat(pattern = "mm:ss")
     private Date songDuration;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "album_id")
     private Album album;
-
-    /* @ManyToOne
-        @JoinTable(name = "special_edition_songs", joinColumns = @JoinColumn(name = "song_id"), inverseJoinColumns = @JoinColumn(name = "special_edition_id"))
-    private SpecialEdition specialEdition; */
     
 }

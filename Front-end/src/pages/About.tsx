@@ -33,7 +33,6 @@ export function About() {
             kits, and more. So why wait? Come and discover the treasures
             awaiting you at Turntable Treasures today.
           </p>
-          <img src="" alt="" />
         </div>
         <div className="accessibility">
           <h1 className="big-titles">Accessibility.</h1>

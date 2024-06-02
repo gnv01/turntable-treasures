@@ -1,7 +1,6 @@
 import { AlbumInterface } from "./AlbumInterface";
-import { BaseItemInterface } from "./BaseItemInterface";
 
-export interface ProductInterface extends BaseItemInterface {
+export interface ProductInterface {
   id: number;
   productName: string;
   productPrice: number;
@@ -10,7 +9,7 @@ export interface ProductInterface extends BaseItemInterface {
   productCategory: string;
   productStock: number;
   productBrand: string;
-  album: AlbumInterface;
+  album?: AlbumInterface;
 }
 
 /* We create an interface for products so the TypeScript compiler can check if 

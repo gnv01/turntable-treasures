@@ -107,8 +107,7 @@ All rights reserved. Used by permission.', 'https://res.cloudinary.com/dokoyavho
 ('Spektor 2', 290, 'The DALI SPEKTOR 2 might be a compact speaker but the larger inner volume than its smaller sibling, the SPEKTOR 1, delivers an extra level of bass performance. The SPEKTOR 2 is ideal for mounting on a shelf, wall or stand and combines well with any compact Hi-Fi music system.', 'https://res.cloudinary.com/dokoyavho/image/upload/v1716673351/Rectangle_77_gryxmn.png', 'Speaker', 15, 'Dali', null),
 ('Vinyl Storage Unit', 13, 'Wood Box to store 12 inch LP', 'https://res.cloudinary.com/dokoyavho/image/upload/v1716673353/Rectangle_79_bd1nv1.png', 'Other', 7, 'Useful Objects', null),
 ('ATN3600L Stylus', 19, 'Replacement ball needle for Audio-Technica cartridges. Compatible models: AT3600, AT3600L, AT3601, AT3651, AT3650L, AT3650C, AT3650 and AT3626. Also valid for turntable models LP60USB and LP60', 'https://res.cloudinary.com/dokoyavho/image/upload/v1716673355/Rectangle_82_unbfnn.png', 'Accessory', 13, 'Audio-Technica', null),
-('Record Cleaner', 15, 'Fun Fact: This product actually costs 63€', 'https://res.cloudinary.com/dokoyavho/image/upload/v1716673356/Rectangle_84_ojqpmb.png', 'Accessory', 23, 'Roskan', null),
-('HP1 Phono BT', 198, 'Designed with a retro feel in mind, the HP1 Phono BT has been handmade in Europe, with an 8mm-thick glass platter and vibration absorbing feet.', 'https://res.cloudinary.com/dokoyavho/image/upload/v1705596073/products/houseplant-turntable_1_oytmjt.png', 'Turntable', 19, 'HOUSEPLANT', null);
+('Record Cleaner', 15, 'Fun Fact: This product actually costs 63€', 'https://res.cloudinary.com/dokoyavho/image/upload/v1716673356/Rectangle_84_ojqpmb.png', 'Accessory', 23, 'Roskan', null);
 
 INSERT INTO special_editions (base_album_id) VALUES
 (6),

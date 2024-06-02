@@ -1,77 +1,3 @@
-/* 
-
-Default properties for the entire app.
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
- */
-
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&display=swap");
 
 :root {
@@ -89,10 +15,6 @@ button:focus-visible {
 ::-webkit-scrollbar {
   background-color: transparent;
   width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -171,6 +93,14 @@ body {
   padding: 25px 60px;
   line-height: 81%;
   letter-spacing: -3%;
+}
+
+.subtitles {
+  color: var(--text);
+  font-family: "Bebas Neue", Helvetica;
+  font-size: var(--fs-md);
+  letter-spacing: -1.5px;
+  line-height: 100%;
 }
 
 .bold {
@@ -363,19 +293,18 @@ body {
   z-index: 1000;
   inset: 0 0 0 0;
   flex-direction: column;
-  /* padding: min(50vh, 30rem) 12em; */
   margin: 0;
   background-color: #f4f1e0;
-  max-width: 30%;
-  transform: translateX(350%);
-  transition: transform 250ms ease-out;
+  max-width: 40%;
+  transform: translateX(250%);
+  transition: transform 0.35s ease-in-out;
   color: var(--text);
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .cart-menu[data-visible="true"] {
-  transform: translateX(235%);
+  transform: translateX(150%);
 }
 
 .mobile-nav-toggle-cart[aria-expanded="true"] .menu-button {
@@ -396,6 +325,8 @@ body {
   font-size: 40px;
   font-weight: 400;
   justify-content: center;
+  align-self: center;
+  text-align: center;
 }
 
 .cart-text {
@@ -422,6 +353,139 @@ body {
 
 .cart-button-explore:hover {
   background-color: #ff6429;
+}
+
+.cart-content {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 80%;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border-bottom: 1px solid #b0ad9c;
+  border-top: 1px solid #b0ad9c;
+}
+.item-content {
+  grid-area: 1 / 2 / 2 / 3;
+  padding: 35px 40px 35px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cart-item-text {
+  font-family: Arimo;
+  font-style: normal;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  justify-content: center;
+}
+
+.cart-item-price {
+  font-family: Arimo;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.cart-item-category {
+  font-family: Arimo;
+  font-style: normal;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  justify-content: center;
+  opacity: 70%;
+}
+
+.cart-item-img {
+  width: 190px;
+  height: auto;
+  aspect-ratio: 1;
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.cart-item-controls {
+  display: flex;
+  border: 1px solid #321e1e;
+  max-width: fit-content;
+  font-family: Arimo;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 5px;
+}
+
+.remove-item-btn {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.cart-item-quant {
+  text-align: center;
+  align-self: center;
+}
+
+.add-item-btn {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.cart-clear {
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  background-color: #321e1e;
+  color: #f4f1e0;
+  cursor: pointer;
+  padding: 10px 80px;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+.cart-clear:hover {
+  background-color: #ff6429;
+}
+
+.cart-checkout {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  height: 20%;
+  background-color: #e7e4d3;
+  min-width: 100%;
+  padding: 50px;
+}
+
+.cart-checkout-titles {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-size: 32px;
+  font-weight: 400;
+  justify-content: center;
+  align-self: center;
 }
 
 /* Hero Section */
@@ -528,6 +592,30 @@ body {
   line-height: normal;
 }
 
+.sm-card > img {
+  cursor: pointer;
+}
+
+.sm-card-pagination {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  flex-basis: 25%;
+  width: max-content;
+  border: 1px #b0ad9c solid;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: Arimo;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.sm-card-pagination > img {
+  cursor: pointer;
+}
+
 .first-big-card {
   display: flex;
   flex-direction: column;
@@ -546,10 +634,6 @@ body {
   line-height: 90%;
   letter-spacing: -0.1rem;
   text-transform: uppercase;
-}
-
-.product-description .product-title {
-  font-size: var(--fs-sm);
 }
 
 .first-big-card > p {
@@ -573,6 +657,10 @@ body {
   height: auto;
 }
 
+.big-card > img {
+  cursor: pointer;
+}
+
 .card-body {
   padding: 15px;
   display: flex;
@@ -588,6 +676,10 @@ body {
 }
 
 /* Products */
+
+.product-description .product-title {
+  font-size: var(--fs-sm);
+}
 
 .product-description {
   display: flex;
@@ -611,6 +703,10 @@ body {
   flex-direction: column;
 }
 
+.product-category {
+  display: none;
+}
+
 .add-to-cart {
   color: #321e1e;
   font-family: Bebas Neue;
@@ -622,10 +718,86 @@ body {
   text-decoration-line: underline;
   width: fit-content;
   transition: color 0.2s ease;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .add-to-cart:hover {
   color: var(--hover);
+}
+
+.add-to-cart-big {
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  background-color: #321e1e;
+  color: #f4f1e0;
+  cursor: pointer;
+  padding: 10px 80px;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+.add-to-cart-big:hover {
+  background-color: #ff6429;
+}
+
+.product {
+  display: flex;
+  padding-top: 150px;
+  justify-content: space-evenly;
+}
+
+.product-big-image {
+  height: 650px;
+  aspect-ratio: 1;
+}
+
+.product-description-category {
+  font-family: Arimo;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  line-height: normal;
+  opacity: 0.7;
+  margin-top: 15px;
+}
+
+.product-big-description {
+  font-family: Arimo;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  line-height: normal;
+  margin-top: 50px;
+}
+
+.product-big-brand {
+  font-family: Arimo;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  line-height: normal;
+  margin-top: 15px;
+}
+
+.product-big-price {
+  font-family: Arimo;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 50px;
+}
+
+.product-specs {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 }
 
 .product-pagination {
@@ -647,7 +819,7 @@ body {
   padding-inline: 10px;
   gap: 25px;
   font-family: "Bebas Neue", Helvetica;
-  font-size: var(--fs-sm);
+  font-size: 20px;
   color: var(--text);
 }
 
@@ -665,6 +837,61 @@ body {
   background-position: center;
   background-size: cover;
   height: 80vh;
+}
+
+.song-list header {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.1rem;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.song-list header:hover {
+  color: var(--hover);
+}
+
+.song-list {
+  text-align: left;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.song-list::after {
+  border-bottom: 1px solid;
+  opacity: 0.6;
+  bottom: 0;
+  content: " ";
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.song-list-previous {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.song-list-container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.song-list-container p {
+  font-family: Arimo;
+  font-size: var(--fs-sm);
+  font-style: normal;
+  line-height: normal;
 }
 
 /* Newsletter */
@@ -756,12 +983,21 @@ body {
   max-width: 50vw;
 }
 
+.accessibility {
+  margin-top: 100px;
+}
+
+.privacy-policy {
+  margin-top: 100px;
+}
+
 .terms-of-service {
   font-family: Arimo;
   font-size: var(--fs-sm);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: 100px;
 }
 
 /* Footer */
@@ -966,6 +1202,15 @@ body {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 
+  .sm-card-pagination {
+    min-width: 270px;
+    height: 400px;
+    background-color: #f4f1e0;
+    margin: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
   .first-big-card {
     min-width: 270px;
     margin: 0px 15px;
@@ -985,5 +1230,23 @@ body {
     height: 20px;
     width: auto;
     aspect-ratio: 1;
+  }
+
+  .div4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .cart-menu {
+    max-width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.35s ease-in-out;
+  }
+
+  .cart-menu[data-visible="true"] {
+    transform: translateX(0%);
   }
 }

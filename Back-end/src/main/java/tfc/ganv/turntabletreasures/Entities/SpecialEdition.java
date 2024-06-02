@@ -27,11 +27,4 @@ public class SpecialEdition {
     @JoinColumn(name = "base_album_id")
     private Album baseAlbum;
 
-    /* @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "album_id")
-    private Album album; */
-
-    /* @OneToMany(mappedBy = "specialEdition", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Song> extraSongs; */
-
 }

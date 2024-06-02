@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProducts } from "../../services/ProductService";
 import { ProductInterface } from "../../types/ProductInterface";
+import { CartContext } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export function CardsSm() {
   const [products, setProducts] = useState<ProductInterface[]>([]);
@@ -15,6 +17,10 @@ export function CardsSm() {
       });
   }, []);
 
+  const navigate = useNavigate();
+
+  const { addToCart } = useContext(CartContext)!;
+
   return (
     <section>
       <div className="card-container">
@@ -25,18 +31,35 @@ export function CardsSm() {
           </p>
         </div>
 
-        {products.slice(0, 3).map((products) => (
-          <div className="sm-card" key={products.id}>
-            <img src={products.productImage} alt="Image of the product" />
+        {products.slice(0, 3).map((product) => (
+          <div className="sm-card" key={product.id}>
+            <img
+              onClick={() => navigate(`/products/${product.id}`)}
+              src={product.productImage}
+              alt="Image of the product"
+            />
             <div className="card-body">
               <p className="product-title">
-                {products.album.artistName} - {products.productName}
+                {product.album
+                  ? `${product.album.artistName} - `
+                  : `${product.productBrand} - `}
+                {product.productName}
               </p>
               <div className="price-and-cart">
-                <p className="product-price">€{products.productPrice}</p>
-                <a href="" className="add-to-cart">
+                <p className="product-price">€{product.productPrice}</p>
+                <p className="product-category">{product.productCategory}</p>
+                <button
+                  className="add-to-cart"
+                  onClick={() =>
+                    addToCart({
+                      id: product.id,
+                      product: product,
+                      quantity: 1,
+                    })
+                  }
+                >
                   add to cart
-                </a>
+                </button>
               </div>
             </div>
           </div>

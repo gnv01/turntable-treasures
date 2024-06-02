@@ -20,6 +20,11 @@ public class ProductService implements IProductService{
     }
 
     @Override
+    public Product getProductById(Long id) {
+        return productRepo.findById(id).get();
+    }
+
+    @Override
     public Product save(Product product) {
         return productRepo.save(product);
     }

@@ -8,18 +8,18 @@ export function Footer() {
     <footer id="footer">
       <div className="parent">
         <div className="div1 footer-titles">
-          <a href="" className="footer-a">
+          <a href="/about" className="footer-a">
             who we are
           </a>
         </div>
         <div className="div2">
-          <a href="" className="footer-a">
+          <a href="/about" className="footer-a">
             terms of service
           </a>
         </div>
         <div className="div3">
-          <a href="" className="footer-a">
-            accessibility
+          <a href="/products" className="footer-a">
+            All our products
           </a>
         </div>
         <div className="div4">

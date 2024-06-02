@@ -11,7 +11,4 @@ public interface ISongService {
     Song save(Song song);
 
     void delete(Long idSong);
-
-    /* List<Song> getSongsByAlbumId(Long albumId); */
-
 }

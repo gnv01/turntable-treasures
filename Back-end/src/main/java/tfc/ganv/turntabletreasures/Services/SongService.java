@@ -29,9 +29,4 @@ public class SongService implements ISongService{
         songRepo.deleteById(idSong);
     }
 
-    /* @Override
-    public List<Song> getSongsByAlbumId(Long albumId) {
-        return songRepo.findByAlbumId(albumId);
-    } */
-
 }
